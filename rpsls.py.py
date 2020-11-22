@@ -1,23 +1,23 @@
+#! /usr/bin/env python
+#-*- coding: utf-8 -*-
 #coding:gbk
 """
-µÚÒ»¸öĞ¡ÏîÄ¿£ºRock-paper-scissors-lizard-Spock
-×÷Õß£º
-ÈÕÆÚ£º
+ç¬¬ä¸€ä¸ªå°é¡¹ç›®:Rock-paper-scissors-lizard-Spock
+ä½œè€…ï¼šåˆ˜åº·ä¹
+æ—¥æœŸï¼š2020/11/22
 """
 
-#import random
-
-
-
-# 0 - Ê¯Í·
-# 1 - Ê·²¨¿Ë
-# 2 - Ö½
-# 3 - òáòæ
-# 4 - ¼ôµ¶
-
-# ÒÔÏÂÎªÍê³ÉÓÎÏ·ËùĞèÒªÓÃµ½µÄ×Ô¶¨Òåº¯Êı
 import random
-#coding:gbk
+
+
+
+# 0 - çŸ³å¤´
+# 1 - å²æ³¢å…‹
+# 2 - çº¸
+# 3 - èœ¥èœ´
+# 4 - å‰ªåˆ€
+# ä»¥ä¸‹ä¸ºå®Œæˆæ¸¸æˆæ‰€éœ€è¦ç”¨åˆ°çš„è‡ªå®šä¹‰å‡½æ•°
+
 """
 def name_to_number(name):
     if name == "rock":
@@ -48,70 +48,70 @@ def number_to_name(number):
         print("Error-number_to_name")
 def rpsls(player_choice):
     print("===============================")
-    print("ÇëÊäÈëÄúµÄÑ¡Ôñ£º",player_choice)
+    print("ä½ çš„é€‰æ‹©ä¸ºï¼š",player_choice)
     play_number = name_to_number(player_choice)
     comp_number = random.randrange(0,5)
     comp_choice = number_to_name(comp_number)
-    print("¼ÆËã»úµÄÑ¡ÔñÎª£º",comp_choice)
+    print("è®¡ç®—æœºçš„é€‰æ‹©ä¸ºï¼š",comp_choice)
 
     n = (play_number - comp_number) % 5
 
     if n==1 or n==2:
-        print("ÄãÓ®ÁË!")
+        print("ä½ èµ¢äº†!")
     elif n==3 or n==4:
-        print("»úÆ÷Ó®ÁË!")
+        print("æœºå™¨èµ¢äº†!")
     elif n==0:
-        print("ÏàÍ¬")
+        print("ç›¸åŒ")
     else:
         print("Error: No Correct Name")
 """
-# ¶Ô³ÌĞò½øĞĞ²âÊÔ
-print("»¶Ó­Ê¹ÓÃRPSLSÓÎÏ·")
+# å¯¹ç¨‹åºè¿›è¡Œæµ‹è¯•
+print("æ¬¢è¿ä½¿ç”¨RPSLSæ¸¸æˆ")
 print("----------------")
-print("ÇëÊäÈëÄúµÄÑ¡Ôñ:")
-choice_name=input()
-def name_to_number(name):
-    if name == "Ê¯Í·":
+print("è¯·è¾“å…¥æ‚¨çš„é€‰æ‹©:")
+choice_name=input()#è¾“å…¥ç©å®¶è¦å‡ºçš„æ–¹å¼
+def name_to_number(name):#å®šä¹‰ä¸€ä¸ªä»åå­—è½¬åŒ–ä¸ºæ•°çš„å‡½æ•°
+    if name == "çŸ³å¤´":
         return 0
-    elif name == "Ê·²¨¿Ë":
+    elif name == "å²æ³¢å…‹":
         return 1
-    elif name == "²¼":
+    elif name == "çº¸":
         return 2
-    elif name == "òáòæ":
+    elif name == "èœ¥èœ´":
         return 3
-    elif choice_name == "¼ôµ¶":
+    elif choice_name == "å‰ªåˆ€":
         return 4
     else:
 
        print("Error-name_to_number")
 
-def number_to_name(number):
+def number_to_name(number):#å®šä¹‰ä¸€ä¸ªæ•°å­—åˆ°åå­—çš„å‡½æ•°
     if number == 0:
-        return "Ê¯Í·"
+        return "çŸ³å¤´"
     elif number == 1:
-        return "Ê·²¨¿Ë"
+        return "å²æ³¢å…‹"
     elif number == 2:
-        return "²¼"
+        return "çº¸"
     elif number == 3:
-        return "òáòæ"
+        return "èœ¥èœ´"
     elif number == 4:
-        return "¼ôµ¶"
+        return "å‰ªåˆ€"
     else:
         print("Error-number_to_name")
-def rpsls(choice_name):
+def rpsls(choice_name):#å®šä¹‰ä¸€ä¸ªrpslså‡½æ•°ï¼Œç”¨æ¥å¯¹æœºå™¨å’Œç©å®¶æ‰€å‡ºç»“æœæ¯”è¾ƒ
     play_number = name_to_number(choice_name)
     comp_number = random.randrange(0,5)
     comp_choice = number_to_name(comp_number)
-    print("¼ÆËã»úµÄÑ¡ÔñÎª£º",comp_choice)
+    print("è®¡ç®—æœºçš„é€‰æ‹©ä¸ºï¼š",comp_choice)
 
     n = (play_number - comp_number) % 5
 
-    if n==1 or n==2:
-        print("ÄãÓ®ÁË!")
+    if n==1 or n==2:#åˆ©ç”¨ifå‡½æ•°è¿›è¡Œæ¯”è¾ƒ
+        print("ä½ èµ¢äº†!")
     elif n==3 or n==4:
-        print("»úÆ÷Ó®ÁË!")
+        print("æœºå™¨èµ¢äº†!")
     elif n==0:
-        print("ÏàÍ¬")
+        print("ç›¸åŒ")
     else:
         print("Error: No Correct Name")
 rpsls(choice_name)
